@@ -60,11 +60,12 @@ def main():
     nodes = [args.node] if args.node else None
 
     steem = Steem(keys=[args.posting_key], nodes=nodes)
+
     while True:
         claim_rewards(steem, args.account)
         logger.info('Sleeping.')
-        time.sleep(2)  # sleep for one hour.
+        time.sleep(3600)  # sleep for one hour.
+
 
 if __name__ == '__main__':
     main()
-
